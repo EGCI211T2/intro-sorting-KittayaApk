@@ -34,7 +34,6 @@ void bubblesort(int *a, int N) {
         }
         if (sorted == 0) break;
     }
-    
 }
 
 void selectionsort(int *a, int N) {
