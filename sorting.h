@@ -35,16 +35,20 @@ void bubblesort(int *a, int N) {
         if (sorted == 0) break;
     }
 }
-
 void selectionsort(int *a, int N) {
-    int i, j, mi;
-    for (i = 0; i < N - 1; i++) {
-        mi = i;
-        for (j = i + 1; j < N; j++) {
-            if (a[j] < a[mi]) {
-                mi = j;
+    int *p;
+    int i, j;
+
+    for (j = 0; j < N - 1; j++) {
+        p = &a[j];
+
+        for (i = j + 1; i < N; i++) {
+            if (*p > a[i]) {
+                p = &a[i];
             }
         }
-        swap(a[i], a[mi]);
+
+        swap(a[j], *p);
+    
     }
 }
